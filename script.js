@@ -41,6 +41,8 @@ const initialTasks = [
   },
 ];
 
+const modal = document.getElementById("modal");
+
 for (let i = 0; i < initialTasks.length; i++) {
   console.log(initialTasks[i].title);
 }
@@ -76,17 +78,19 @@ const taskCards = document.querySelectorAll(".task-card");
 
 taskCards.forEach((card) => {
   card.addEventListener("click", () => {
-    document.getElementById("modal").classList.remove("hidden-modal");
-
     const taskId = card.dataset.id;
     const task = initialTasks.find((task) => task.id == taskId);
 
     document.getElementById("title-modal").value = task.title;
     document.getElementById("modal-description").value = task.description;
     document.getElementById("modal-status").value = task.status;
+
+    modal.classList.remove("hidden-modal");
   });
 });
 
-document.getElementById("close-btn").addEventListener("click", () => {
-  document.getElementById("modal").classList.add("hidden-modal");
+const closebtn = document.getElementById("close-btn");
+
+closebtn.addEventListener("click", () => {
+  modal.classList.add("hidden-modal");
 });

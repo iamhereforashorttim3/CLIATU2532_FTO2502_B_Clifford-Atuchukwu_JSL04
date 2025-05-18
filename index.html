@@ -79,17 +79,28 @@
     </div>
     <div id="modal" class="hidden-modal">
       <div class="modal">
-        <button id="close-btn">x</button>
-        <label for="title-modal">Title</label>
-        <input id="title-modal" type="text" />
-        <label for="modal-description">Description</label>
-        <textarea id="modal-description"></textarea>
-        <label for="modal-status">Status</label>
-        <select id="modal-status">
-          <option value="todo">todo</option>
-          <option value="doing">doing</option>
-          <option value="done">done</option>
-        </select>
+        <div class="modal-content">
+          <label for="modal-header">
+            <span>Task</span>
+            <button id="close-btn">X</button>
+          </label>
+          <label for="title-modal">
+            <span>Title</span>
+            <input id="title-modal" type="text" />
+          </label>
+          <label for="modal-description">
+            <span> Description</span>
+            <textarea id="modal-description"></textarea>
+          </label>
+          <label for="modal-status">
+            <span>Status</span>
+            <select id="modal-status">
+              <option value="todo">todo</option>
+              <option value="doing">doing</option>
+              <option value="done">done</option>
+            </select>
+          </label>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
