@@ -53,6 +53,7 @@ initialTasks.forEach((task) => {
   const taskCard = document.createElement("div");
   taskCard.classList.add("task-card");
   taskCard.textContent = task.title;
+  taskCard.dataset.id = task.id;
 
   column.appendChild(taskCard);
 });
@@ -70,3 +71,22 @@ function updateTaskCounts() {
 }
 
 updateTaskCounts();
+
+const taskCards = document.querySelectorAll(".task-card");
+
+taskCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    document.getElementById("modal").classList.remove("hidden-modal");
+
+    const taskId = card.dataset.id;
+    const task = initialTasks.find((task) => task.id == taskId);
+
+    document.getElementById("title-modal").value = task.title;
+    document.getElementById("modal-description").value = task.description;
+    document.getElementById("modal-status").value = task.status;
+  });
+});
+
+document.getElementById("close-btn").addEventListener("click", () => {
+  document.getElementById("modal").classList.add("hidden-modal");
+});

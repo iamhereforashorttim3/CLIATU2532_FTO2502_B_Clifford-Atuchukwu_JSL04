@@ -305,3 +305,7 @@ h2 {
     padding: 24px;
   }
 }
+
+.hidden-modal {
+  display: none;
+}

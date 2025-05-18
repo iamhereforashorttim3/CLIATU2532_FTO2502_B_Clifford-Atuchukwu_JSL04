@@ -42,7 +42,6 @@
           <h2 class="header-board-name" id="header-board-name">
             Launch Career
           </h2>
-          <h3 class="add-new-task" id="add-new-task">+Add New Task</h3>
         </div>
       </header>
 
@@ -76,6 +75,21 @@
             <div class="tasks-container" data-status="done"></div>
           </div>
         </main>
+      </div>
+    </div>
+    <div id="modal" class="hidden-modal">
+      <div class="modal">
+        <button id="close-btn">x</button>
+        <label for="title-modal">Title</label>
+        <input id="title-modal" type="text" />
+        <label for="modal-description">Description</label>
+        <textarea id="modal-description"></textarea>
+        <label for="modal-status">Status</label>
+        <select id="modal-status">
+          <option value="todo">todo</option>
+          <option value="doing">doing</option>
+          <option value="done">done</option>
+        </select>
       </div>
     </div>
     <script src="script.js"></script>
