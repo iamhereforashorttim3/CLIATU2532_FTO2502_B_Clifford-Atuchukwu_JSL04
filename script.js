@@ -1,3 +1,4 @@
+//These are the initial tasks for the kanban
 const initialTasks = [
   {
     id: 1,
@@ -41,12 +42,15 @@ const initialTasks = [
   },
 ];
 
+//It gets the modal element from the page
 const modal = document.getElementById("modal");
 
+//This is meant to be logging all the task titles
 for (let i = 0; i < initialTasks.length; i++) {
   console.log(initialTasks[i].title);
 }
 
+//It finds the column, and creates the task cards within the divs
 initialTasks.forEach((task) => {
   const column = document.querySelector(
     `.tasks-container[data-status="${task.status}"]`
@@ -60,6 +64,7 @@ initialTasks.forEach((task) => {
   column.appendChild(taskCard);
 });
 
+//This is meant to be a dynamic counter for the headers
 function updateTaskCounts() {
   const headers = document.querySelectorAll("h4[data-status]");
 
@@ -73,7 +78,7 @@ function updateTaskCounts() {
 }
 
 updateTaskCounts();
-
+//This creates event listners for the task cards for interactability
 const taskCards = document.querySelectorAll(".task-card");
 
 taskCards.forEach((card) => {
@@ -89,6 +94,7 @@ taskCards.forEach((card) => {
   });
 });
 
+//This is meant to close the modal
 const closebtn = document.getElementById("close-btn");
 
 closebtn.addEventListener("click", () => {
