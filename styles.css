@@ -355,3 +355,31 @@ select {
   font-size: 1rem;
   color: red;
 }
+
+@media (min-width: 1024px) {
+  .modal {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 50%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (min-width: 577px) and (max-width: 1023px) {
+  .modal {
+    width: 80%;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal {
+    width: 95%;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
